@@ -36,7 +36,7 @@ This is our prescribed method for running this code, and has been tested on `Win
    - if you perform "extract all" and extract the folder in the zip file as well, you can `cd` the folder to:
    
        `example: C:\Users\your user name\downloads\aagp-demo` 
-8) `python "Figure 3.py"`
+8) `python "EXECUTOR.py"`
 
 The code will then execute and perform the procedure outlined in the beginning of this section.
 
@@ -44,7 +44,7 @@ The code will then execute and perform the procedure outlined in the beginning o
 
 ## Simulation & Runtime Notes
 ### Changing the Example to Test
-1) open the `Figure 3.py` file
+1) open the `EXECUTOR.py` file
 2) Change the value of `test_function` keyword argument in the declaration of the `RUN_PIPELINE` function (`line 8`):
   - `test_function = 0` to run a simulation for the `Qing (3D)` function
   - `test_function = 1` to run a simulation for the `Cosine (10D)` function
