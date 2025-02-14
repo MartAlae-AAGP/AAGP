@@ -39,30 +39,35 @@ def RUN_PIPELINE(test_function = 0):
     def install_packages():
         def install(package):
             print('Installing package: ', package)
-            if 'matplot' in package or 'scipy' in package or 'xgboost' in package or 'pandas' in package or 'scikit-learn' in package:
-                try:
-                    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-                except:
-                    subprocess.check_call([sys.executable, "-m", "pip", "install", package.split('=')[0]])
+            if not 'requirements' in package.lower():
+                if 'matplot' in package or 'scipy' in package or 'xgboost' in package or 'pandas' in package or 'scikit-learn' in package:
+                    try:
+                        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+                    except:
+                        subprocess.check_call([sys.executable, "-m", "pip", "install", package.split('=')[0]])
+                else:
+                    try:
+                        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+                    except:
+                        subprocess.check_call([sys.executable, "-m", "pip", "install",'--use-pep517', package])
             else:
-                try:
-                    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-                except:
-                    subprocess.check_call([sys.executable, "-m", "pip", "install",'--use-pep517', package])
+                subprocess.check_call([sys.executable,"-m", "pip", "install", '-r', package])
 
         packages = [
-            'matplotlib==3.7.1',
-            'seaborn==0.12.2',
-            'tqdm==4.65.0',
-            'scipy==1.8.0', # 1.7.3 for python 3.7.16
-            'scikit-learn==1.0.2',
-            'xgboost==1.7.5', # 1.6.2 for python 3.7.16
-            'GPy==1.10.0',
-            'git+https://github.com/SheffieldML/pyDeepGP',
-            'numpy==1.21.6',
-            'pandas==2.0.1',
-            'joblib==1.2.0',
+            # 'matplotlib==3.7.1',
+            # 'seaborn==0.12.2',
+            # 'tqdm==4.65.0',
+            # 'scipy==1.8.0', # 1.7.3 for python 3.7.16
+            # 'scikit-learn==1.0.2',
+            # 'xgboost==1.7.5', # 1.6.2 for python 3.7.16
+            # 'GPy==1.10.0',
+            # 'git+https://github.com/SheffieldML/pyDeepGP',
+            # 'numpy==1.21.6',
+            # 'pandas==2.0.1',
+            # 'joblib==1.2.0',
             # 'ipykernel',
+            'numpy==1.21.6',
+            'requirements.txt'
         ]
         print()
         print('================================================================')
