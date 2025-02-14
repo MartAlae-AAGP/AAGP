@@ -4324,8 +4324,8 @@ def RUN_PIPELINE(test_function = 0):
     ax.set_title(test_function_title)
     ax.legend(loc='upper right', bbox_to_anchor=(1.5,1), frameon=True, shadow=True)
     plt.tight_layout()
-    plt.savefig(current_directory + '/Example Output.jpg',dpi=350)
-    print('Output JPG saved to ---->', current_directory + '/' + 'Example Output.jpg')
+    plt.savefig(current_directory + '/Figure 3.jpg',dpi=350)
+    print('Output JPG saved to ---->', current_directory + '/' + 'Figure 3.jpg')
 
 if os.path.basename(__file__) == 'temp_exe.py':
     RUN_PIPELINE()
