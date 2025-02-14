@@ -2057,10 +2057,16 @@ def RUN_PIPELINE(test_function = 0):
                 # fit the model
                 if self.ard_regression:
                     # M = ARDRegression(fit_intercept=True, n_iter=300)
-                    M = ARDRegression(fit_intercept=True, n_iter=300, lambda_2=100)
+                    try:
+                        M = ARDRegression(fit_intercept=True, n_iter=300, lambda_2=100)
+                    except:
+                        M = ARDRegression(fit_intercept=True, max_iter=300, lambda_2=100)
                 else:
                     # M = BayesianRidge(fit_intercept=True, n_iter=300)
-                    M = BayesianRidge(fit_intercept=True, n_iter=300, lambda_2=100)
+                    try:
+                        M = BayesianRidge(fit_intercept=True, n_iter=300, lambda_2=100)
+                    except:
+                        M = BayesianRidge(fit_intercept=True, max_iter=300, lambda_2=100)
 
                 with warnings.catch_warnings():
                     warnings.filterwarnings("ignore", category=ConvergenceWarning)
