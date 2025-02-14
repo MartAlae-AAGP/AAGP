@@ -4393,6 +4393,6 @@ if __name__ == "__main__":
     else:
         command = f"source {activate_cmd} && python {exe_script}"
         subprocess.run(command, shell=True, executable="/bin/bash")
-    # os.remove(output_file)
+    os.remove(output_file)
 
 
