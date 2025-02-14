@@ -4348,7 +4348,7 @@ def extract_section(input_file, output_file, start_marker, stop_marker):
 if __name__ == "__main__":
         
     # Example usageos.path.basename(__file__)
-    input_file = 'EXE.py'
+    input_file = os.path.basename(__file__)
     output_file = 'temp_exe.py'
     start_marker = "### - START PYTHON"
     stop_marker = "### - STOP PYTHON"
