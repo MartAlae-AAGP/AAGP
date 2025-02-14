@@ -8,7 +8,7 @@ This repository contains the code for running two examples of simulations as see
 ## Recommended Installation
 The steps below are listed to allow users to configure a python environment similar to that used by the authors of this manuscript to produce examples of output as seen in Figure 3 therein.
 
-This is our prescribed method for running this code, and has been tested on `Windows`. To prevent dependency issues with users' existing python installations, our code was designed to perform the following `by running the "Figure 3.py" file`:
+This is our prescribed method for running this code, and has been tested on `Windows`. To prevent dependency issues with users' existing python installations, our code was designed to perform the following `by running the "Figure 3.py" file with "requirements.txt" in the same directory`:
 
 1) utilize the version of python executing the code
 2) create a virtual environment (`venv`) based on the utilized version of python
