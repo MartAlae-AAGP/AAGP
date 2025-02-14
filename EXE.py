@@ -62,7 +62,7 @@ def RUN_PIPELINE(test_function = 0):
             'numpy==1.21.6',
             'pandas==2.0.1',
             'joblib==1.2.0',
-            'ipykernel',
+            # 'ipykernel',
         ]
         print()
         print('================================================================')
