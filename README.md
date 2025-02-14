@@ -12,8 +12,9 @@ This is our prescribed method for running this code, and has been tested on `Win
 
 1) utilize the version of python executing the code
 2) create a virtual environment (`venv`) based on the utilized version of python
-3) install all necessary packages in `venv`
-4) run the simulation in `venv`
+3) install all necessary packages in `venv` using the `requirements.txt` file
+4) create a temporary python file titled `temp_exe.py`, used to run the simulation in the `venv`
+5) run the simulation in `venv`
 
 ### Setup and Running
 1) Download this branch (`main`) as a zip file
@@ -36,7 +37,7 @@ This is our prescribed method for running this code, and has been tested on `Win
    - if you perform "extract all" and extract the folder in the zip file as well, you can `cd` the folder to:
    
        `example: C:\Users\your user name\downloads\aagp-demo` 
-8) `python EXECUTOR_VENV.py`
+8) `python "Figure 3.py"`
 
 The code will then execute and perform the procedure outlined in the beginning of this section.
 
@@ -44,10 +45,10 @@ The code will then execute and perform the procedure outlined in the beginning o
 
 ## Simulation & Runtime Notes
 ### Changing the Example to Test
-1) open the `EXAMPLE_FUNCTION.py` file
-2) Change the value of `test_function`:
-  - `0` to run a simulation for the `Qing (3D)` function
-  - `1` to run a simulation for the `Cosine (10D)` function
+1) open the `Figure 3.py` file
+2) Change the value of `test_function` keyword argument in the declaration of the `RUN_PIPELINE` function (`line 8`):
+  - `test_function = 0` to run a simulation for the `Qing (3D)` function
+  - `test_function = 1` to run a simulation for the `Cosine (10D)` function
 ### Runtime Notes
 - Once started after step `(8)` above, the code will then proceed to install packages and run the simulation.
 - At the end, it will output `Example Output.jpg` to the directory in which `EXECUTOR.py` is placed.
