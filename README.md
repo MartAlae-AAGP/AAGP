@@ -13,7 +13,6 @@ This is our prescribed method for running this code, and has been tested on `Win
 1) utilize the version of python executing the code
 2) create a virtual environment (`venv`) based on the utilized version of python
 3) install all necessary packages in `venv` using the `requirements.txt` file
-4) create a temporary python file titled `temp_exe.py`, used to run the simulation in the `venv`
 5) run the simulation in `venv`
 
 ### Setup and Running
