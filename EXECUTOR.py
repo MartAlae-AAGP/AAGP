@@ -2391,7 +2391,7 @@ def RUN_PIPELINE(test_function = 0):
             super().__init__(*args, **kwargs)
 
         def __call__(self, *args, **kwargs):
-            with TQDM(disable=not self._use_tqdm, total=self._total) as self._pbar:
+            with TQDM(disable=not self._use_tqdm, total=self._total, colour='blue', bar_format="{l_bar}{bar} | {n}/{total}") as self._pbar:
                 return Parallel.__call__(self, *args, **kwargs)
 
         def print_progress(self):
@@ -4077,6 +4077,7 @@ def RUN_PIPELINE(test_function = 0):
         YA = []
         XE = []
         YE = []
+        # for model in TQDM(models, colour='red', bar_format="{l_bar}{bar} | {n}/{total}"):
         for model in models:
             for T in pops:
                 xa, ya, xe, ye, f, b = get_function(
@@ -4159,14 +4160,16 @@ def RUN_PIPELINE(test_function = 0):
             n_find      = n_find,
         )
 
-        print('Running Simulation. Replicates: ',replicates, '%s Jobs: '%('Parallel' if parallel else 'Series'), nJobs)
+        print('========================================================================')
+        print('Running Simulation. Total Processes: %s |'%(len(M)), '%s Jobs: '%('Parallel' if parallel else 'Series'), nJobs)
+        print('========================================================================')
         with warnings.catch_warnings():
             np.seterr('ignore')
             warnings.simplefilter('ignore')
             if parallel:
                 DF = pd.concat(
                     # Parallel(n_jobs = nJobs)(delayed(APP)(i) for i in range(len(M))),
-                    ProgressParallel(n_jobs = nJobs, use_tqdm=False, timeout=None, backend='loky')(delayed(APP)(i) for i in range(len(M))),
+                    ProgressParallel(n_jobs = nJobs, use_tqdm=True, timeout=None, backend='loky', total=len(M))(delayed(APP)(i) for i in range(len(M))),
 
                     axis=0,
                     ignore_index=True
