@@ -4301,6 +4301,9 @@ def RUN_PIPELINE(test_function = 0):
     DF_2 = pd.DataFrame()
     if True:
         simulation_parameters['models'] = models_2
+        
+        # change for low-RAM machines
+        simulation_parameters['nJobs'] = int(n_jobs/2)
         DF_2,XA,YA = run_doe(**simulation_parameters)
     tend2 = defTime()
     tend = tend2-tend1
