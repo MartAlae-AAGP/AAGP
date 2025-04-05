@@ -32,6 +32,7 @@ def RUN_PIPELINE(test_function = 0):
     import subprocess
     import sys
     import os
+    import gc
     '''
     import EXAMPLE_FUNCTION
     '''
@@ -4027,6 +4028,10 @@ def RUN_PIPELINE(test_function = 0):
                 _nrmse = '%0.3f'%(metrics['nrmse'][-1])
                 _wmape = '%0.3f'%(metrics['wmape'][-1])
                 print(f'{model} - {i}/{n_find} | nrmse: {_nrmse} | wmape: {_wmape}')
+            
+            del mu
+            del sig
+            gc.collect()
         
         # [3] - create the pandas dataframe to show the results
         # ======================================================
