@@ -713,14 +713,24 @@ def RUN_PIPELINE(test_function = 0):
                 sys.stdout = old_stdout
                 sys.stderr = old_stderr
 
+            def inference_model(predictor, xIn):
+                groupings = np.array_split(list(range(xIn.shape[0])), int(np.ceil(np.sqrt(xIn.shape[0]))))
+                yOut      = np.zeros((xIn.shape[0],1))
 
-            mu = lambda xIn: MODEL.predict(xPaster(xIn))[0].reshape(-1,1)
-            sig= lambda xIn: MODEL.predict(xPaster(xIn))[1].reshape(-1,1)
+                for group in groupings:
+                    xi = xIn[group,:]
+                    yi = predictor(xi)
+                    yOut[group,:] = yi
+                return np.matrix(yOut).reshape(-1,1)
+
+            mu_ = lambda xIn: MODEL.predict(xPaster(xIn))[0].reshape(-1,1)
+            sig_= lambda xIn: MODEL.predict(xPaster(xIn))[1].reshape(-1,1)
 
             if 'deep' in self.name:
-                mu = lambda xIn: np.matrix(MODEL.predict(self.normDown(xPaster(xIn), mode='x'))[0]).reshape(-1,1)
-                sig= lambda xIn: np.matrix(MODEL.predict(self.normDown(xPaster(xIn), mode='x'))[1]).reshape(-1,1)
-
+                mu_ = lambda xIn: np.matrix(MODEL.predict(self.normDown(xPaster(xIn), mode='x'))[0]).reshape(-1,1)
+                sig_= lambda xIn: np.matrix(MODEL.predict(self.normDown(xPaster(xIn), mode='x'))[1]).reshape(-1,1)
+            mu = lambda xIn: inference_model(mu_, xIn)
+            sig= lambda xIn: inference_model(sig_, xIn)
             self.mu = mu
             self.sig= sig
             self.MODEL=MODEL
@@ -4293,7 +4303,7 @@ def RUN_PIPELINE(test_function = 0):
     # [4] - run group 1 in parallel
     # ==============================================
     DF_1 = pd.DataFrame()
-    if True:
+    if False:
         simulation_parameters['models'] = models_1
         DF_1,XA,YA = run_doe(**simulation_parameters)
 
