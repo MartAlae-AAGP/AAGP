@@ -4303,7 +4303,7 @@ def RUN_PIPELINE(test_function = 0):
     # [4] - run group 1 in parallel
     # ==============================================
     DF_1 = pd.DataFrame()
-    if False:
+    if True:
         simulation_parameters['models'] = models_1
         DF_1,XA,YA = run_doe(**simulation_parameters)
 
