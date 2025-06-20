@@ -32,27 +32,26 @@ def RUN_PIPELINE(test_function = 0):
     import subprocess
     import sys
     import os
-    import gc
     '''
     import EXAMPLE_FUNCTION
     '''
     # if True:
     def install_packages():
-        def install(package):
+        def install(package, extra_cli=[]):
             print('Installing package: ', package)
             if not 'requirements' in package.lower():
                 if 'matplot' in package or 'scipy' in package or 'xgboost' in package or 'pandas' in package or 'scikit-learn' in package:
                     try:
-                        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+                        subprocess.check_call([sys.executable, "-m", "pip", "install", package] + extra_cli)
                     except:
-                        subprocess.check_call([sys.executable, "-m", "pip", "install", package.split('=')[0]])
+                        subprocess.check_call([sys.executable, "-m", "pip", "install", package.split('=')[0]] + extra_cli)
                 else:
                     try:
-                        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+                        subprocess.check_call([sys.executable, "-m", "pip", "install", package] + extra_cli)
                     except:
-                        subprocess.check_call([sys.executable, "-m", "pip", "install",'--use-pep517', package])
+                        subprocess.check_call([sys.executable, "-m", "pip", "install",'--use-pep517', package] + extra_cli)
             else:
-                subprocess.check_call([sys.executable,"-m", "pip", "install", '-r', package])
+                subprocess.check_call([sys.executable,"-m", "pip", "install", '-r', package] + extra_cli)
 
         packages = [
             # 'matplotlib==3.7.1',
@@ -67,7 +66,7 @@ def RUN_PIPELINE(test_function = 0):
             # 'pandas==2.0.1',
             # 'joblib==1.2.0',
             # 'ipykernel',
-            'numpy==1.21.6',
+            'numpy==1.23.1',
             'requirements.txt'
         ]
         print()
@@ -76,7 +75,10 @@ def RUN_PIPELINE(test_function = 0):
         print('================================================================')
         print()
         for g in packages:
-            install(g)
+            try:
+                install(g)
+            except:
+                install(g, extra_cli=['--use-feature=2020-resolver'])
         print()
         print()
         print()
@@ -713,24 +715,14 @@ def RUN_PIPELINE(test_function = 0):
                 sys.stdout = old_stdout
                 sys.stderr = old_stderr
 
-            def inference_model(predictor, xIn):
-                groupings = np.array_split(list(range(xIn.shape[0])), int(np.ceil(np.sqrt(xIn.shape[0]))))
-                yOut      = np.zeros((xIn.shape[0],1))
 
-                for group in groupings:
-                    xi = xIn[group,:]
-                    yi = predictor(xi)
-                    yOut[group,:] = yi
-                return np.matrix(yOut).reshape(-1,1)
-
-            mu_ = lambda xIn: MODEL.predict(xPaster(xIn))[0].reshape(-1,1)
-            sig_= lambda xIn: MODEL.predict(xPaster(xIn))[1].reshape(-1,1)
+            mu = lambda xIn: MODEL.predict(xPaster(xIn))[0].reshape(-1,1)
+            sig= lambda xIn: MODEL.predict(xPaster(xIn))[1].reshape(-1,1)
 
             if 'deep' in self.name:
-                mu_ = lambda xIn: np.matrix(MODEL.predict(self.normDown(xPaster(xIn), mode='x'))[0]).reshape(-1,1)
-                sig_= lambda xIn: np.matrix(MODEL.predict(self.normDown(xPaster(xIn), mode='x'))[1]).reshape(-1,1)
-            mu = lambda xIn: inference_model(mu_, xIn)
-            sig= lambda xIn: inference_model(sig_, xIn)
+                mu = lambda xIn: np.matrix(MODEL.predict(self.normDown(xPaster(xIn), mode='x'))[0]).reshape(-1,1)
+                sig= lambda xIn: np.matrix(MODEL.predict(self.normDown(xPaster(xIn), mode='x'))[1]).reshape(-1,1)
+
             self.mu = mu
             self.sig= sig
             self.MODEL=MODEL
@@ -2402,7 +2394,7 @@ def RUN_PIPELINE(test_function = 0):
             super().__init__(*args, **kwargs)
 
         def __call__(self, *args, **kwargs):
-            with TQDM(disable=not self._use_tqdm, total=self._total, colour='blue', bar_format="{l_bar}{bar} | {n}/{total}") as self._pbar:
+            with TQDM(disable=not self._use_tqdm, total=self._total) as self._pbar:
                 return Parallel.__call__(self, *args, **kwargs)
 
         def print_progress(self):
@@ -4038,10 +4030,6 @@ def RUN_PIPELINE(test_function = 0):
                 _nrmse = '%0.3f'%(metrics['nrmse'][-1])
                 _wmape = '%0.3f'%(metrics['wmape'][-1])
                 print(f'{model} - {i}/{n_find} | nrmse: {_nrmse} | wmape: {_wmape}')
-            
-            del mu
-            del sig
-            gc.collect()
         
         # [3] - create the pandas dataframe to show the results
         # ======================================================
@@ -4092,7 +4080,6 @@ def RUN_PIPELINE(test_function = 0):
         YA = []
         XE = []
         YE = []
-        # for model in TQDM(models, colour='red', bar_format="{l_bar}{bar} | {n}/{total}"):
         for model in models:
             for T in pops:
                 xa, ya, xe, ye, f, b = get_function(
@@ -4175,16 +4162,14 @@ def RUN_PIPELINE(test_function = 0):
             n_find      = n_find,
         )
 
-        print('========================================================================')
-        print('Running Simulation. Total Processes: %s |'%(len(M)), '%s Jobs: '%('Parallel' if parallel else 'Series'), nJobs)
-        print('========================================================================')
+        print('Running Simulation. Replicates: ',replicates, '%s Jobs: '%('Parallel' if parallel else 'Series'), nJobs)
         with warnings.catch_warnings():
             np.seterr('ignore')
             warnings.simplefilter('ignore')
             if parallel:
                 DF = pd.concat(
                     # Parallel(n_jobs = nJobs)(delayed(APP)(i) for i in range(len(M))),
-                    ProgressParallel(n_jobs = nJobs, use_tqdm=True, timeout=None, backend='loky', total=len(M))(delayed(APP)(i) for i in range(len(M))),
+                    ProgressParallel(n_jobs = nJobs, use_tqdm=False, timeout=None, backend='loky')(delayed(APP)(i) for i in range(len(M))),
 
                     axis=0,
                     ignore_index=True
@@ -4316,9 +4301,6 @@ def RUN_PIPELINE(test_function = 0):
     DF_2 = pd.DataFrame()
     if True:
         simulation_parameters['models'] = models_2
-        
-        # change for low-RAM machines
-        simulation_parameters['nJobs'] = int(n_jobs/2)
         DF_2,XA,YA = run_doe(**simulation_parameters)
     tend2 = defTime()
     tend = tend2-tend1
