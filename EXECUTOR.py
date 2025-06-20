@@ -38,21 +38,21 @@ def RUN_PIPELINE(test_function = 0):
     '''
     # if True:
     def install_packages():
-        def install(package):
+        def install(package, extra_cli=[]):
             print('Installing package: ', package)
             if not 'requirements' in package.lower():
                 if 'matplot' in package or 'scipy' in package or 'xgboost' in package or 'pandas' in package or 'scikit-learn' in package:
                     try:
-                        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+                        subprocess.check_call([sys.executable, "-m", "pip", "install", package] + extra_cli)
                     except:
-                        subprocess.check_call([sys.executable, "-m", "pip", "install", package.split('=')[0]])
+                        subprocess.check_call([sys.executable, "-m", "pip", "install", package.split('=')[0]] + extra_cli)
                 else:
                     try:
-                        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+                        subprocess.check_call([sys.executable, "-m", "pip", "install", package] + extra_cli)
                     except:
-                        subprocess.check_call([sys.executable, "-m", "pip", "install",'--use-pep517', package])
+                        subprocess.check_call([sys.executable, "-m", "pip", "install",'--use-pep517', package] + extra_cli)
             else:
-                subprocess.check_call([sys.executable,"-m", "pip", "install", '-r', package])
+                subprocess.check_call([sys.executable,"-m", "pip", "install", '-r', package] + extra_cli)
 
         packages = [
             # 'matplotlib==3.7.1',
