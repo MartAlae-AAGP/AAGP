@@ -39,7 +39,7 @@ def RUN_PIPELINE(test_function = 0):
     import EXAMPLE_FUNCTION
     '''
     # if True:
-    def install_packages():
+    def install_packages(skip_tokens=['git']):
         def install(package):
             print('Installing package: ', package)
             if not 'requirements' in package.lower():
@@ -78,7 +78,24 @@ def RUN_PIPELINE(test_function = 0):
         print('================================================================')
         print()
         for g in packages:
-            install(g)
+            if 'requir' in g:
+                with open(g) as file:
+                    packs = [_ for _ in file.read().split('\n') if len(_) > 0 ]
+                    if skip_tokens:
+                        skips = [g_ for g_ in packs if True in [f_ in g_ for f_ in skip_tokens]]
+                        if len(skips) > 0:
+                            print(f'Skipping packages: {skips}')
+                        packs = [g for g in packs if not g in skips]
+                        print(f'Installing packages: {packs}')
+                    # for _g in packs:
+                    #     install(_g)
+                    with open('temp_requirements.txt','w', encoding='utf-8') as tempfile:
+                        for pkg in packs:
+                            tempfile.write(pkg+'\n') 
+                    install('temp_requirements.txt')
+                    continue
+            else:
+                install(g)
         print()
         print()
         print()
@@ -4428,5 +4445,3 @@ if __name__ == "__main__":
         command = f"source {activate_cmd} && python {exe_script}"
         subprocess.run(command, shell=True, executable="/bin/bash")
     os.remove(output_file)
-
-
