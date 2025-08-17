@@ -192,6 +192,7 @@ The `DeepGP` competitor is computationally intensive and dominates the runtime a
     - Intel i9-13900Hx (28 cores employed)
     - 96 GB Ram
     - Runtime: ~180 minutes in parallel execution
+    
 Users running on less powerful systems should expect longer runtimes, particularly due to the `DeepGP` competitor.
 
 ### Runtime Notes
