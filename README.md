@@ -167,8 +167,11 @@ The steps below are listed to allow users to configure a python environment simi
 
 1) Download this repo and extract to some desired folder (example: extracting in `~/Downloads` gives `~/Downloads/AAGP-main`)
 2) Open a new terminal and navigate to the folder: `cd ~/Downloads/AAGP-main`
-3) Create and activate an environment with python 3.9: `conda create -n aagp_demo python=3.9 -y`
-4) Activate the environment, navigate to the folder in step 2 if you have note done so, and run the python file: 
+3) Create and activate an environment with python 3.9, activate it, and manually install `pyDeepGP`:
+    1) `conda create -n aagp_demo python=3.9 -y`
+    2) `conda activate aagp_demo`
+    3) `git clone https://github.com/SheffieldML/pyDeepGP.git`
+4) If you have not done so, activate the environment, navigate to the folder in step 2, and run the python file: 
     1) `conda activate aagp_demo`
     2) `cd ~/Downloads/AAGP-main`
     3) `python "EXECUTOR-MAC.py"`
