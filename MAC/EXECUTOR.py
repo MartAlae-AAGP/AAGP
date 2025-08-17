@@ -70,7 +70,7 @@ def RUN_PIPELINE(test_function = 0):
             # 'joblib==1.2.0',
             # 'ipykernel',
             'numpy>=1.23.1',
-            'requirements.txt'
+            '../requirements.txt'
         ]
         print()
         print('================================================================')
