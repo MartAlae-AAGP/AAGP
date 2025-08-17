@@ -68,7 +68,7 @@ def RUN_PIPELINE(test_function = 0):
             # 'joblib==1.2.0',
             # 'ipykernel',
             'numpy==1.23.1',
-            'requirements.txt'
+            '../requirements.txt'
         ]
         print()
         print('================================================================')
@@ -4426,4 +4426,3 @@ if __name__ == "__main__":
         command = f"source {activate_cmd} && python {exe_script}"
         subprocess.run(command, shell=True, executable="/bin/bash")
     os.remove(output_file)
-
