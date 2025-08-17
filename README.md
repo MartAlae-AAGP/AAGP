@@ -185,7 +185,7 @@ The steps below are listed to allow users to configure a python environment simi
 ## Additional Notes
 ### Runtime Notes
 - Once started, the code will then proceed to install packages and run the simulation.
-- At the end, it will output `Example Output.jpg` to the directory in which `EXECUTOR.py` is placed.
+- At the end, it will output `Figure 3.jpg` to the directory in which `Figure3.py` or `Figure3_MAC.py` is placed.
 - The DeepGP methodolgy is very memory-intensive and may cause OOM errors running in parallel.
 - Runtime is roughly ~180min on an intel 13900HX processor with 28 cores and 96GB RAM running in parallel.
 - The primary hardware stressor arises from the DeepGP competitor, which imposes heavy demands on both memory and CPU. As a result, some low-end systems may yield long run-times due to computational complexity.
