@@ -183,6 +183,17 @@ The steps below are listed to allow users to configure a python environment simi
 ----
 
 ## Additional Notes
+### Hardware Requirements
+The `DeepGP` competitor is computationally intensive and dominates the runtime and memory usage of this simulation.
+- Minimum Recommended:
+    - CPU: 8+ cores
+    - RAM: 16 GB (32 GB strongly recommended)
+- Tested System:
+    - Intel i9-13900Hx (28 cores employed)
+    - 96 GB Ram
+    - Runtime: ~180 minutes in parallel execution
+Users running on less powerful systems should expect longer runtimes, particularly due to the `DeepGP` competitor.
+
 ### Runtime Notes
 - Once started, the code will then proceed to install packages and run the simulation.
 - At the end, it will output `Figure 3.jpg` to the directory in which `Figure3.py` or `Figure3_MAC.py` is placed.
