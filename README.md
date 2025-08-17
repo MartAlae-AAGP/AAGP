@@ -45,7 +45,7 @@ The steps below are listed to allow users to configure a python environment simi
 7) Run the code in the directory: `python "Figure3.py"`
 8) When the code completes, it will output `Figure 3.jpg` which can be opened via the file explorer.
 
-### UBUNTU Linux (Without Anaconda)
+### UBUNTU Linux OS (Without Anaconda)
 - Please skip to step (5) if you have a dedicated environment with git installed and proper permissions
 
 1) After downloading the repo zip file and extracting to a directory (for this example: `/home/vboxuser/Downloads/AAGP-main/AAGP-main`), open a `terminal` and navigate to it:
@@ -65,7 +65,7 @@ The steps below are listed to allow users to configure a python environment simi
     1) `python3.9 "Figure3.py"`
 6) once the code completes, the image `Figure 3.jpg` will be output. it can be opened in an image viewer you have available.
 
-### UBUNTU Linux (With Anaconda)
+### UBUNTU Linux OS (With Anaconda)
 - Please skip to step (6) if you have a dedicated environment with git installed and proper permissions
 
 1) After downloading the repo zip file and extracting to a directory (for this example: `/home/vboxuser/Downloads/AAGP-main/AAGP-main`), open a `terminal` and navigate to it:
