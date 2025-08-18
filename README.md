@@ -8,7 +8,7 @@ This repository contains the code for running a simulation to output the subplot
 ----
 
 ## Setup & Code Execution
-The steps below are listed to allow users to configure a python environment similar to that used by the authors of this manuscript. As mentioned the resultant output will be a single subplot of the `Qing (3D)` test function. We have tested the code to run on `Windows`, `Windows Subsystem for Linux (WSL)`, `Ubuntu Linux` via VirtualBox virtual machine, and `MAC-OS`. We provide instructions to assist with setting up and running the simulation with and without anaconda/miniconda configurations.
+The steps below are listed to allow users to configure a python environment similar to that used by the authors of this manuscript. As mentioned the resultant output will be a single subplot of the `Qing (3D)` test function. We have tested the code to run on `Windows`, `Windows Subsystem for Linux (WSL)`, `Ubuntu Linux OS` via VirtualBox virtual machine, and `MAC-OS`. We provide instructions to assist with setting up and running the simulation with and without anaconda/miniconda configurations.
 
 - Please note that wile we provide examples for directories, you may download and extract the files in this repo to a location of your own so long as the directory you point to in the below procedures is inside the exact folder that contains `Figure3.py` and `Figure3_MAC.py`. In the below examples these folders may change depending on how each OS extracts the zip files, but the target directories are those that directly contain the aforementioned files.
 - Example: On windows, if the `Figure3.py` file was extracted to `c:\some\folder\Figure3.py`, then you will change the directory to that folder via: `cd c:\some\folder`
