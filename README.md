@@ -66,7 +66,7 @@ The steps below are listed to allow users to configure a python environment simi
     1) `chmod u+rwx .`
 5) run the code in the directory
     1) `python3.9 "Figure3.py"`
-6) once the code completes, the image `Figure3.jpg` will be output. it can be opened in an image viewer you have available.
+6) once the code completes, the image `Figure3.jpg` will be output. It can be opened via the file explorer.
 
 ### UBUNTU Linux OS (With Anaconda)
 - Please skip to step (6) if you have a dedicated environment with git installed and proper permissions
@@ -92,7 +92,7 @@ The steps below are listed to allow users to configure a python environment simi
 6) Navigate to the directory and run the python file:
     1) `cd /home/vboxuser/Downloads/AAGP-main/AAGP-main`
     2) `python "Figure3.py"`
-7) once the code completes, the image `Figure3.jpg` will be output. it can be opened in an image viewer you have available.
+7) once the code completes, the image `Figure3.jpg` will be output. It can be opened via the file explorer.
 
 
 ### WSL Linux (Without Anaconda)
