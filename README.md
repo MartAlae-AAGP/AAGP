@@ -134,7 +134,7 @@ The steps below are listed to allow users to configure a python environment simi
     2) `cp -r /mnt/c/"Users/YourUserName/Downloads/AAGP-main/AAGP-main" aagp_demo`
     3) `cd aagp_demo`
 5) From within that folder, run the simulation and open the figure when it completes:
-    1) `python "Figure3.py"
+    1) `python3.9 "Figure3.py"`
     2) `eog "/home/YourUserName/aagp_demo/Figure 3.jpg"` or `eog "Figure 3.jpg"`
         - it may take a few moments as it is a high-resolution photo
     
