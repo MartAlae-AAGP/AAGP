@@ -30,7 +30,7 @@ The steps below are listed to allow users to configure a python environment simi
 5) Open `Command Prompt` (not powershell), Navigate to the designated folder for windows, and run the python file:
     1) `cd "C:\Users\YourUserName\Downloads\AAGP-main\AAGP-main"`
     2) `py -3.9 "Figure3.py"`
-6) When the code completes, it will output `Figure 3.jpg` which can be opened via the file explorer.
+6) When the code completes, it will output `Figure3.jpg` which can be opened via the file explorer.
 
 ### Windows (With Anaconda)
 - Please skip to step (7) if you have a dedicated environment with git installed, and have the environment active and ready
@@ -43,7 +43,7 @@ The steps below are listed to allow users to configure a python environment simi
 5) Navigate to the `Windows` folder where the code was extracted: `cd "C:\Users\YourUserName\Downloads\AAGP-main\AAGP-main"`
 6) Install git: `conda install -y git`
 7) Run the code in the directory: `python "Figure3.py"`
-8) When the code completes, it will output `Figure 3.jpg` which can be opened via the file explorer.
+8) When the code completes, it will output `Figure3.jpg` which can be opened via the file explorer.
 
 ### UBUNTU Linux OS (Without Anaconda)
 - Please skip to step (5) if you have a dedicated environment with git installed and proper permissions
@@ -63,7 +63,7 @@ The steps below are listed to allow users to configure a python environment simi
     1) `chmod u+rwx .`
 5) run the code in the directory
     1) `python3.9 "Figure3.py"`
-6) once the code completes, the image `Figure 3.jpg` will be output. it can be opened in an image viewer you have available.
+6) once the code completes, the image `Figure3.jpg` will be output. it can be opened in an image viewer you have available.
 
 ### UBUNTU Linux OS (With Anaconda)
 - Please skip to step (6) if you have a dedicated environment with git installed and proper permissions
@@ -88,7 +88,7 @@ The steps below are listed to allow users to configure a python environment simi
 6) Navigate to the directory and run the python file:
     1) `cd /home/vboxuser/Downloads/AAGP-main/AAGP-main`
     2) `python "Figure3.py"`
-7) once the code completes, the image `Figure 3.jpg` will be output. it can be opened in an image viewer you have available.
+7) once the code completes, the image `Figure3.jpg` will be output. it can be opened in an image viewer you have available.
 
 
 ### WSL Linux (Without Anaconda)
@@ -112,7 +112,7 @@ The steps below are listed to allow users to configure a python environment simi
     1) `cd ~/aagp_demo`
     2) `python3.9 "Figure3.py"`
 5) Once complete, use eog to open the figure (it may take a few moments as it is a high-resolution photo):
-    - `eog "/home/YourUserName/aagp_demo/Figure 3.jpg"` or `eog "Figure 3.jpg"`
+    - `eog "/home/YourUserName/aagp_demo/Figure3.jpg"` or `eog "Figure3.jpg"`
 
 ### WSL Linux (With Anaconda)
 - Please skip to step (4) if you have a dedicated environment with git installed
@@ -139,7 +139,7 @@ The steps below are listed to allow users to configure a python environment simi
     3) `cd aagp_demo`
 5) From within that folder, run the simulation and open the figure when it completes:
     1) `python3.9 "Figure3.py"`
-    2) `eog "/home/YourUserName/aagp_demo/Figure 3.jpg"` or `eog "Figure 3.jpg"`
+    2) `eog "/home/YourUserName/aagp_demo/Figure3.jpg"` or `eog "Figure3.jpg"`
         - it may take a few moments as it is a high-resolution photo
     
 ### MAC-OS (Without Anaconda/Miniconda)
@@ -159,7 +159,7 @@ The steps below are listed to allow users to configure a python environment simi
     1) if needed: `source aagp_env/bin/activate`
     2) if needed: `cd ~/Downloads/AAGP-main`
     3) `python "Figure3_MAC.py"`
-6) When the code completes, it will output `Figure 3.jpg` which can be opened via the file explorer.
+6) When the code completes, it will output `Figure3.jpg` which can be opened via the file explorer.
 
 - Note:
     - if the terminal is closed you can reopen it and start from step (3).
@@ -179,7 +179,7 @@ The steps below are listed to allow users to configure a python environment simi
     1) `conda activate aagp_demo`
     2) `cd ~/Downloads/AAGP-main`
     3) `python "Figure3_MAC.py"`
-5) When the code completes, it will output `Figure 3.jpg` which can be opened via the file explorer.
+5) When the code completes, it will output `Figure3.jpg` which can be opened via the file explorer.
 - Note:
     - if the terminal is closed you can reopen it and start from step (4).
     - if you do not have git installed, you may be prompted to install it. Please do so and go back to step 4.
@@ -201,7 +201,7 @@ Users running on less powerful systems should expect longer runtimes, particular
 
 ### Runtime Notes
 - Once started, the code will then proceed to install packages and run the simulation.
-- At the end, it will output `Figure 3.jpg` to the directory in which `Figure3.py` or `Figure3_MAC.py` is placed.
+- At the end, it will output `Figure3.jpg` to the directory in which `Figure3.py` or `Figure3_MAC.py` is placed.
 - The DeepGP methodolgy is very memory-intensive and may cause OOM errors running in parallel.
 - Runtime is roughly ~180min on an intel 13900HX processor with 28 cores and 96GB RAM running in parallel.
 - The primary hardware stressor arises from the DeepGP competitor, which imposes heavy demands on both memory and CPU. As a result, some low-end systems may yield long run-times due to computational complexity.
