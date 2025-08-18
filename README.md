@@ -10,6 +10,8 @@ This repository contains the code for running a simulation to output the subplot
 ## Setup & Code Execution
 The steps below are listed to allow users to configure a python environment similar to that used by the authors of this manuscript. As mentioned the resultant output will be a single subplot of the `Qing (3D)` test function. We have tested the code to run on `windows`, `Windows Subsystem for Linux (WSL)`, `Ubuntu Linux` via VirtualBox virtual machine, and `MAC-OS`. We provide instructions to assist with setting up and running the simulation with and without anaconda/miniconda configurations.
 
+- Please note, that wile we provide examples for directories, you may download and extract the files in this repo to locations of your own so long as the directory you point to in the below procedures is the exact folder that contains `Figure3.py` and `Figure3_MAC.py`.
+
 ### Windows (Without Anaconda)
 - Please skip to step (5) if you have a dedicated environment with git installed
 
@@ -49,7 +51,7 @@ The steps below are listed to allow users to configure a python environment simi
 - Please skip to step (5) if you have a dedicated environment with git installed and proper permissions
 
 1) After downloading the repo zip file and extracting to a directory (for this example: `/home/vboxuser/Downloads/AAGP-main/AAGP-main`), open a `terminal` and navigate to it:
-    1) `cd /home/vboxuser/Downloads/AAGP-main/AAGP-main`
+    1) `cd /home/vboxuser/Downloads/AAGP-main/`
 2) install python 3.9
     1) `sudo apt update`
     2) `sudo apt install -y software-properties-common`
