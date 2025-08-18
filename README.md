@@ -147,7 +147,7 @@ The steps below are listed to allow users to configure a python environment simi
         - it may take a few moments as it is a high-resolution photo
     
 ### MAC-OS (Without Anaconda/Miniconda)
-- This setup assumes you have a compatible version of python (`3.9` recommended) installed arleady.
+- This setup assumes you have git and a compatible version of python (`3.9` recommended) installed arleady.
 - Please skip to step (4) if you have a dedicated environment with git installed.
 
 1) Download this repo and extract to some desired folder (example: extracting in `~/Downloads` gives `~/Downloads/AAGP-main`)
@@ -170,7 +170,7 @@ The steps below are listed to allow users to configure a python environment simi
     - if you do not have git installed, you may be prompted to install it. Please do so and go back to step 4.
 
 ### MAC-OS (With Miniconda)
-- This setup assumes you have miniconda or anaconda installed arleady.
+- This setup assumes you have git and miniconda or anaconda installed arleady.
 - Please skip to step (4) if you have a dedicated environment with git installed.
 
 1) Download this repo and extract to some desired folder (example: extracting in `~/Downloads` gives `~/Downloads/AAGP-main`)
