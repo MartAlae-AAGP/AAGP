@@ -10,7 +10,10 @@ This repository contains the code for running a simulation to output the subplot
 ## Setup & Code Execution
 The steps below are listed to allow users to configure a python environment similar to that used by the authors of this manuscript. As mentioned the resultant output will be a single subplot of the `Qing (3D)` test function. We have tested the code to run on `Windows`, `Windows Subsystem for Linux (WSL)`, `Ubuntu Linux OS`, and `MAC-OS`. We provide instructions to assist with setting up and running the simulation with and without anaconda/miniconda configurations.
 
-- Please note that wile we provide examples for directories, you may download and extract the files in this repo to a location of your own so long as the directory you point to in the below procedures is inside the exact folder that contains `Figure3.py` and `Figure3_MAC.py`. In the below examples these folders may change depending on how each OS extracts the zip files, but the target directories are those that directly contain the aforementioned files.
+Please note:
+
+- The code has been developed and run by the authors using `Python 3.9.*`, and our instructions below will also leverage the same version. As such we recommend using the latest version of `3.9` to avoid compatibility issues. Please see the `Python Versioning Notes` section for more info.
+- While we provide examples for directories, you may download and extract the files in this repo to a location of your own so long as the directory you point to in the below procedures is inside the exact folder that contains `Figure3.py` and `Figure3_MAC.py`. In the below examples these folders may change depending on how each OS extracts the zip files, but the target directories are those that directly contain the aforementioned files.
 - Example: On windows, if the `Figure3.py` file was extracted to `c:\some\folder\Figure3.py`, then you will change the directory to that folder via: `cd c:\some\folder`
 
 ### Windows (Without Anaconda)
@@ -211,4 +214,4 @@ Users running on less powerful systems should expect longer runtimes, particular
 - The primary hardware stressor arises from the DeepGP competitor, which imposes heavy demands on both memory and CPU. As a result, some low-end systems may yield long run-times due to computational complexity.
 
 ### Python Versioning Notes
-We have tested this code on python versions `3.7-3.12` and have found that the `GPy` package is compatible with `3.7`, `3.8`, and `3.9` versions before compiler issues occured due to code differences in python past 3.9 regarding compilers. This repo and code execution is mostly compatible with the earlier versions of python, with some `patch` versions, for example python `3.9` patch `0` or  `3.9.0` being incompatible, while `3.9.13` and `3.9.23` are compatible. As such, we recommend leveraging the above instructions and installing the latest version of `3.9` to avoid compatibility issues.
+We have tested this code on python versions `3.7-3.12` and have found that the `GPy` package is compatible with `3.7`, `3.8`, and `3.9` versions before compiler issues occured due to code differences in python past `3.9` regarding compilers. This repo and code execution is mostly compatible with the earlier versions of python, with some `patch` versions, for example python `3.9` patch `0` or  `3.9.0` being incompatible, while `3.9.13` and `3.9.23` are compatible. As such, we recommend leveraging the above instructions and installing the latest version of `3.9` to avoid compatibility issues.
