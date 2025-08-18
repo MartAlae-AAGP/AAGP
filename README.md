@@ -13,7 +13,7 @@ The steps below are listed to allow users to configure a python environment simi
 Please note:
 
 - The code has been developed and run by the authors using `Python 3.9.*`, and our instructions below will also leverage the same version. As such we recommend using the latest version of `3.9` to avoid compatibility issues. Please see the `Python Versioning Notes` section for more info.
-- While we provide examples for directories, you may download and extract the files in this repo to a location of your own so long as the directory you point to in the below procedures is inside the exact folder that contains `Figure3.py` and `Figure3_MAC.py`. In the below examples these folders may change depending on how each OS extracts the zip files, but the target directories are those that directly contain the aforementioned files.
+- While we provide examples for directories, you may download and extract the files in this repo to a location of your own so long as the directory you point to in the below procedures is inside the exact folder that contains `requirements.txt`, `Figure3.py`, and `Figure3_MAC.py`. In the below examples these folders may change depending on how each OS extracts the zip files, but the target directories are those that directly contain the aforementioned files.
 - Example: On windows, if the `Figure3.py` file was extracted to `c:\some\folder\Figure3.py`, then you will change the directory to that folder via: `cd c:\some\folder`
 
 ### Windows (Without Anaconda)
