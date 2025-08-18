@@ -88,6 +88,7 @@ The steps below are listed to allow users to configure a python environment simi
 5) If this is your first time installing conda newly and see an error: `CondaToSNonInteractiveError`, enter the following commands:
     1) `conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main`
     2) `conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r`
+    3) Retry step (4)
 6) Navigate to the directory and run the python file:
     1) `cd /home/vboxuser/Downloads/AAGP-main/AAGP-main`
     2) `python "Figure3.py"`
