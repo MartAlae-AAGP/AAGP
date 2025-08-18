@@ -122,11 +122,12 @@ The steps below are listed to allow users to configure a python environment simi
     2) `bash Miniconda3-latest-Linux-x86_64.sh`
     3) proceed through the instructions (accept the install path and select `yes` to allow it to `initialize miniconda on startup`)
     4) Close and reopen your WSL terminal to activate conda
-2) Create the environment, activate it, and install Git
+2) Create the environment, activate it, and install Git and eog
     1) `conda create --name aagp_demo python=3.9 -y`
     2) `conda activate aagp_demo`
-    2) `sudo apt update`
-    3) `sudo apt install -y git`
+    3) `sudo apt update`
+    4) `sudo apt install -y git`
+    5) `sudo apt install eog`
 3) If this is your first time installing conda newly and see an error: `CondaToSNonInteractiveError`, enter the following commands:
     1) `conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main`
     2) `conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r`
