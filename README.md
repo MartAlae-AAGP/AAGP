@@ -96,8 +96,8 @@ The steps below are listed to allow users to configure a python environment simi
 
 1) After downloading the repo zip-file and extracting to your directory (example: `C:\Users\YourUserName\Downloads\AAGP-main\AAGP-main`), mount it via the ubuntu terminal:
     1) `cd ~`
-    2) `cp -r /mnt/c/Users/"YourUserName"/Downloads/AAGP-main/AAGP-main aagp_demo`
-       - please note the quotes around `YourUserName`
+    2) `cp -r "/mnt/c/Users/YourUserName/Downloads/AAGP-main/AAGP-main" aagp_demo`
+       - please note the quotes around the target directory
     4) `cd aagp_demo`
 2) install python 3.9
     1) `sudo apt update`
@@ -134,8 +134,8 @@ The steps below are listed to allow users to configure a python environment simi
     3) retry step (2)
 4) Access the folder with your code (example: `C:\Users\YourUserName\Downloads\AAGP-main\AAGP-main`), mount it via the ubuntu terminal:
     1) `cd ~`
-    2) `cp -r /mnt/c/Users/"YourUserName"/Downloads/AAGP-main/AAGP-main aagp_demo`
-       - please note the quotes around `YourUserName`
+    2) `cp -r "/mnt/c/Users/YourUserName/Downloads/AAGP-main/AAGP-main" aagp_demo`
+       - please note the quotes around the target directory
     3) `cd aagp_demo`
 5) From within that folder, run the simulation and open the figure when it completes:
     1) `python3.9 "Figure3.py"`
