@@ -104,7 +104,7 @@ The steps below are listed to allow users to configure a python environment simi
     3) `sudo add-apt-repository ppa:deadsnakes/ppa`
     4) `sudo apt update`
     5) `sudo apt install -y python3.9 python3.9-venv python3.9-distutils`
-3) install eog and git:
+3) install eog and git (if not installed):
     - `sudo apt install eog`
     - `sudo apt install -y git`
 4) run the code using the installed version of python:
