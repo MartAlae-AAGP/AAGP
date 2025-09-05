@@ -3,12 +3,13 @@
 By Stanford Martinez and Adel Alaeddini
 
 ## Intro
-This repository contains the code for running a simulation to output the subplot pertaining to the `Qing (3D)` test function in `Figure 3` of the manuscript.
+
+This repository contains the code for running a simulation to output the results from the `Qing (3D)` function, a single subplot from `Figure 3` in the manuscript.
 
 ----
 
 ## Setup & Code Execution
-The steps below are listed to allow users to configure a python environment similar to that used by the authors of this manuscript. As mentioned the resultant output will be a single subplot of the `Qing (3D)` test function. We have tested the code to run on `Windows`, `Windows Subsystem for Linux (WSL)`, `Ubuntu Linux OS`, and `MAC-OS`. We provide instructions to assist with setting up and running the simulation with and without anaconda/miniconda configurations.
+The steps below are listed to allow users to configure a python environment similar to that used by the authors of this manuscript. As mentioned the resultant output will be a single subplot of `Figure 3`,  the `Qing (3D)` test function. We have tested the code to run on `Windows`, `Windows Subsystem for Linux (WSL)`, `Ubuntu Linux OS`, and `MAC-OS`. We provide instructions to assist with setting up and running the simulation with and without anaconda/miniconda configurations.
 
 Please note:
 
